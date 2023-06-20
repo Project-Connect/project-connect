@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.tvslc</groupId>
-	<artifactId>project-collab-parent</artifactId>
-    <name>project-collab-parent</name>
+	<artifactId>project-connect-parent</artifactId>
+    <name>project-connect-parent</name>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
@@ -25,13 +25,13 @@
     <dependencies>
         <dependency>
             <groupId>net.tvslc</groupId>
-            <artifactId>project-collab-rest</artifactId>
+            <artifactId>project-connect-rest</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.tvslc</groupId>
-            <artifactId>project-collab-web</artifactId>
+            <artifactId>project-connect-web</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>

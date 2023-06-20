@@ -4,16 +4,16 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.tvslc</groupId>
-	<artifactId>project-collab-rest</artifactId>
+	<artifactId>project-connect-rest</artifactId>
 	<version>${revision}</version>
 	<packaging>jar</packaging>
-	<name>project-collab-rest</name>
+	<name>project-connect-rest</name>
 	
 	<parent>
 		<groupId>net.tvslc</groupId>
-		<artifactId>project-collab-parent</artifactId>
+		<artifactId>project-connect-parent</artifactId>
 		<version>${revision}</version>
-		<relativePath>../project-collab-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
+		<relativePath>../project-connect-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 
 	<description>Demo project for Spring Boot</description>
@@ -90,7 +90,7 @@
                 </execution>
             </executions>
             <configuration>
-                <mainClass>net.tvslc.projectcollab.ProjectCollabApplication</mainClass>
+                <mainClass>net.tvslc.projectconnect.ProjectConnectApplication</mainClass>
                 <executable>true</executable>
             </configuration>
         </plugin>

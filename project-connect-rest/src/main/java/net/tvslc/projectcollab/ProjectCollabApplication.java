@@ -1,12 +1,12 @@
-package net.tvslc.projectcollab;
+package net.tvslc.projectconnect;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjectCollabApplication {
+public class ProjectConnectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectCollabApplication.class, args);
+		SpringApplication.run(ProjectConnectApplication.class, args);
 	}
 }

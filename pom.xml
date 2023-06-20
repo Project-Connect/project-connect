@@ -4,16 +4,16 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.tvslc</groupId>
-	<artifactId>project-collab</artifactId>
-    <name>project-collab</name>
+	<artifactId>project-connect</artifactId>
+    <name>project-connect</name>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>project-collab-parent</module>
-        <module>project-collab-rest</module>
-        <module>project-collab-web</module>
-        <module>project-collab-app</module>
+        <module>project-connect-parent</module>
+        <module>project-connect-rest</module>
+        <module>project-connect-web</module>
+        <module>project-connect-app</module>
     </modules>
     <properties>
         <java.version>17</java.version>

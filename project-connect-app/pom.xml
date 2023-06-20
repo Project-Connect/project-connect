@@ -4,16 +4,16 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>project-collab-app</artifactId>
+    <artifactId>project-connect-app</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
-    <name>project-collab-app</name>
+    <name>project-connect-app</name>
 
 	<parent>
 		<groupId>net.tvslc</groupId>
-		<artifactId>project-collab-parent</artifactId>
+		<artifactId>project-connect-parent</artifactId>
 		<version>${revision}</version>
-		<relativePath>../project-collab-parent/pom.xml</relativePath>
+		<relativePath>../project-connect-parent/pom.xml</relativePath>
 	</parent>
     <properties>
         <java.version>17</java.version>
@@ -21,11 +21,11 @@
     <dependencies>
         <dependency>
             <groupId>net.tvslc</groupId>
-            <artifactId>project-collab-rest</artifactId>
+            <artifactId>project-connect-rest</artifactId>
         </dependency>
         <dependency>
             <groupId>net.tvslc</groupId>
-            <artifactId>project-collab-web</artifactId>
+            <artifactId>project-connect-web</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -34,7 +34,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>net.tvslc.projectcollab.ProjectCollabApplication</mainClass>
+                    <mainClass>net.tvslc.projectconnect.ProjectConnectApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
