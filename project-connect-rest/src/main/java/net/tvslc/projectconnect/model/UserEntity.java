@@ -30,5 +30,4 @@ public class UserEntity {
 
     @Column(name = "bio")
     private String bio;
-
 }
