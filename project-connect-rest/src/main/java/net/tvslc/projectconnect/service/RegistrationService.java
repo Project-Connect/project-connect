@@ -27,8 +27,6 @@ public class RegistrationService {
         }
         return Optional.of(getUserResponse);
 
-
-
     }
 
     public UserEntity register(UserEntity userEntity){
