@@ -7,6 +7,7 @@ import net.tvslc.projectconnect.model.RegistrationRequest;
 import net.tvslc.projectconnect.model.UserEntity;
 import net.tvslc.projectconnect.repository.UserRepository;
 import net.tvslc.projectconnect.service.RegistrationService;
+import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,20 +33,14 @@ public class RegistrationController {
     @GetMapping(path = "user/{username}")
     public ResponseEntity<GetUserResponse> getUser(String username) { // responseEntity help format the content into json
         //TODO: return ONLY the username, email and bio of the user;
-        Optional<GetUserResponse> getUserResponse = registrationService.getUserByUsername(username);
-
-        if (getUserResponse.isPresent()){
-            return new ResponseEntity<GetUserResponse>(getUserResponse.get(), HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        }
+        return registrationService.getUserByUsername(username);
     }
 
-    @PutMapping(path = "user")
-    public UserEntity updateUser(@RequestBody RegistrationRequest request) {
+    @PutMapping(path = "user/")
+    public ResponseEntity<UserEntity> updateUser(@RequestBody RegistrationRequest request) {
         //TODO: allow update to password, bio and email, NOT username
-        return null;
+
+        return registrationService.updateUser(request);
     }
 
     @DeleteMapping(path = "user/{username}")
