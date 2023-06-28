@@ -1,6 +1,7 @@
 package net.tvslc.projectconnect.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.tvslc.projectconnect.mapper.RegistrationRequestMapper;
 import net.tvslc.projectconnect.model.GetUserResponse;
 import net.tvslc.projectconnect.model.RegistrationRequest;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
+@Slf4j
 @RequestMapping(path = "api/v1/")
 public class RegistrationController {
 
@@ -27,12 +29,13 @@ public class RegistrationController {
     }
 
     @GetMapping(path = "user/{username}")
-    public ResponseEntity<GetUserResponse> getUser(String username) { // responseEntity help format the content into json
+    public ResponseEntity<GetUserResponse> getUser(@PathVariable("username") String username) { // responseEntity help format the content into json
         //TODO: return ONLY the username, email and bio of the user;
+        log.info(username);
         return registrationService.getUserByUsername(username);
     }
 
-    @PutMapping(path = "user/")
+    @PutMapping(path = "user")
     public ResponseEntity<UserEntity> updateUser(@RequestBody RegistrationRequest request) {
         //TODO: allow update to password, bio and email, NOT username
 
@@ -40,7 +43,7 @@ public class RegistrationController {
     }
 
     @DeleteMapping(path = "user/{username}")
-    public ResponseEntity<String> delete(String username) {
+    public ResponseEntity<String> delete(@PathVariable("username") String username) {
         //TODO: return a message when the user is deleted successfully
         //
         return registrationService.deleteUserByUsername(username);

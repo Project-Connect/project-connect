@@ -1,5 +1,6 @@
 package net.tvslc.projectconnect.service;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import net.tvslc.projectconnect.model.GetUserResponse;
 import net.tvslc.projectconnect.model.RegistrationRequest;
@@ -8,7 +9,7 @@ import net.tvslc.projectconnect.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 import java.util.Optional;
 
@@ -55,6 +56,7 @@ public class RegistrationService {
         }
 
     }
+    @Transactional
     public ResponseEntity<String> deleteUserByUsername(String username){
         //find user's entity by username
         Optional<UserEntity> userEntity = userRepository.findByUsername(username);
