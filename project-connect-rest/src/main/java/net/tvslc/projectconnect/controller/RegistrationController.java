@@ -1,6 +1,7 @@
 package net.tvslc.projectconnect.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.tvslc.projectconnect.mapper.RegistrationRequestMapper;
 import net.tvslc.projectconnect.model.GetUserResponse;
 import net.tvslc.projectconnect.model.RegistrationRequest;
