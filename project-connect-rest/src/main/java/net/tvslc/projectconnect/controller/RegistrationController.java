@@ -7,12 +7,8 @@ import net.tvslc.projectconnect.model.RegistrationRequest;
 import net.tvslc.projectconnect.model.UserEntity;
 import net.tvslc.projectconnect.repository.UserRepository;
 import net.tvslc.projectconnect.service.RegistrationService;
-import org.apache.catalina.User;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -44,8 +40,9 @@ public class RegistrationController {
     }
 
     @DeleteMapping(path = "user/{username}")
-    public UserEntity delete(String userId) {
+    public ResponseEntity<String> delete(String username) {
         //TODO: return a message when the user is deleted successfully
-        return null;
+        //
+        return registrationService.deleteUserByUsername(username);
     }
 }

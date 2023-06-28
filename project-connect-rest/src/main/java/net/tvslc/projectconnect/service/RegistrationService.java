@@ -55,6 +55,20 @@ public class RegistrationService {
         }
 
     }
+    public ResponseEntity<String> deleteUserByUsername(String username){
+        //find user's entity by username
+        Optional<UserEntity> userEntity = userRepository.findByUsername(username);
+        // check if user exist in Entity by username then delete
+        if (userEntity.isPresent()){
+            userRepository.deleteByUsername(username);
+            return new ResponseEntity<>("Your Account Has Been Successfully Deleted",HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        }
+
+
+    }
     public UserEntity register(UserEntity userEntity){
         return userRepository.save(userEntity);
     }
