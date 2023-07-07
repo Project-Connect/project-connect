@@ -7,5 +7,4 @@ RUN apk add --update nodejs npm
 COPY . /home/app
 RUN mvn -f /home/app/pom.xml clean package
 VOLUME /tmp
-COPY /home/app/project-connect-rest/target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/home/app/project-connect-rest/target/project-connect-rest-0.0.0.jar"]
