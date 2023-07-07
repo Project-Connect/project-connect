@@ -8,7 +8,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-FROM eclipse-temurin:17-jdk-alpine
+FROM timbru31/java-node:17-jdk
 VOLUME /tmp
 COPY /home/app/project-connect-rest/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
