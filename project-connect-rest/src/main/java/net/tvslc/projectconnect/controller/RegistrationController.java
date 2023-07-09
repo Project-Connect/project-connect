@@ -36,7 +36,7 @@ public class RegistrationController {
     }
 
     @PutMapping(path = "user")
-    public ResponseEntity<UserEntity> updateUser(@RequestBody RegistrationRequest request) {
+    public ResponseEntity<String> updateUser(@RequestBody RegistrationRequest request) {
         //TODO: allow update to password, bio and email, NOT username
 
         return registrationService.updateUser(request);

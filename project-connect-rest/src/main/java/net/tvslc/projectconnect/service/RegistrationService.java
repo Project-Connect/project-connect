@@ -37,7 +37,7 @@ public class RegistrationService {
 
     }
 
-    public ResponseEntity<UserEntity> updateUser(RegistrationRequest request){
+    public ResponseEntity<String> updateUser(RegistrationRequest request){
     // find specific user's entity
     Optional<UserEntity> singleUser = userRepository.findByUsername(request.getUsername());
 
@@ -48,8 +48,9 @@ public class RegistrationService {
         updateUser.setPassword(request.getPassword());
         updateUser.setEmail(request.getEmail());
         updateUser.setBio(request.getBio());
-        // update variables to database
-        return new ResponseEntity<>(userRepository.save(updateUser), HttpStatus.OK);
+        // save it to entity
+        userRepository.save(updateUser);
+        return new ResponseEntity<>("Updated Successfully", HttpStatus.OK);
 
     }else{
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

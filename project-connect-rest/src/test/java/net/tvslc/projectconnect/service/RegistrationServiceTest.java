@@ -45,6 +45,7 @@ public class RegistrationServiceTest {
         Mockito.when(userRepository.findByUsername(any())).thenReturn(Optional.of(createBasicEntity()));
 
         ResponseEntity<GetUserResponse> userResponseEntity = registrationService.getUserByUsername("username");
+
         GetUserResponse getUserResponse = userResponseEntity.getBody();
 
         assertEquals(HttpStatus.OK, userResponseEntity.getStatusCode());
@@ -75,7 +76,8 @@ public class RegistrationServiceTest {
         Mockito.when(userRepository.findByUsername(testRequest.getUsername())).thenReturn(Optional.of(createBasicEntity()));
 
         // create an object that use the update user function and test its content(call the update function in its class)
-        ResponseEntity<UserEntity> saveUserResponse = registrationService.updateUser(testRequest);
+        //test the function
+        ResponseEntity<String> saveUserResponse = registrationService.updateUser(testRequest);
         // to test its content, need to first call its body, since it return user entity, we need to create user entity
 
 
@@ -95,7 +97,7 @@ public class RegistrationServiceTest {
         Mockito.when(userRepository.findByUsername(testRequest.getUsername())).thenReturn(Optional.empty());
 
         // create an object that use the update user function and test its content(call the update function in its class)
-        ResponseEntity<UserEntity> saveUserResponse = registrationService.updateUser(testRequest);
+        ResponseEntity<String> saveUserResponse = registrationService.updateUser(testRequest);
         // to test its content, need to first call its body, since it return user entity, we need to create user entity
 
         //update function will return "response entity",we mock it as saveUserResponse before
