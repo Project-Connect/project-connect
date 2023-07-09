@@ -66,10 +66,7 @@ public class RegistrationService {
             return new ResponseEntity<>("Your Account Has Been Successfully Deleted",HttpStatus.OK);
         }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
         }
-
-
     }
     public UserEntity register(UserEntity userEntity){
         return userRepository.save(userEntity);
